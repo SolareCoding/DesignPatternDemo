@@ -1,0 +1,41 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="pub.solare.designpatterndemo.mvvm.VoteViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:id="@+id/voteCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please vote!"
+            android:textSize="32sp" />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:textSize="32sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(viewmodel.voteCount)}" />
+
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vote"
+            android:onClick="@{() -> viewmodel.addVote()}"
+            android:textSize="32sp" />
+
+    </LinearLayout>
+
+</layout>
